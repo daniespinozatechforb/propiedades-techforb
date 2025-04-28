@@ -1,0 +1,29 @@
+<section class="hero">
+  <div class="hero__overlay"></div>
+  <app-navbar class="hero__navbar"></app-navbar>
+  <div class="hero__content">
+    <h1 class="hero__title">
+      Tu Hogar Ideal: Encuentra la Propiedad de tus Sueños con Nosotros
+    </h1>
+    <div class="hero__actions">
+      <div class="hero__tabs">
+        <app-button text="Comprar" type="tab" [isActive]="activeTab === 'buy'"
+          (onClick)="setActiveTab('buy')"></app-button>
+        <app-button text="Alquilar" type="tab" [isActive]="activeTab === 'rent'"
+          (onClick)="setActiveTab('rent')"></app-button>
+      </div>
+      <div class="hero__form">
+        <div class="hero__input-search">
+          <app-input-search type="text"></app-input-search>
+        </div>
+        <div class="hero__search">
+          <app-select [options]="['Departamento', 'Casa', 'Ph']" placeholder="Departamento" ></app-select>
+          <app-select [options]="['1 ambiente', '2 ambientes', '3 ambientes']" placeholder="Ambientes" ></app-select>
+          <app-select [options]="['$100', '$200', '$300']" placeholder="Precio" ></app-select>
+          <app-button icon="tune" type="filter"></app-button>
+          <app-button icon="search" type="search" (onClick)="search()"></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+  }
+  
+  .card h2 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card p {
+    font-size: .9rem;
+    font-weight: bold;
+  }

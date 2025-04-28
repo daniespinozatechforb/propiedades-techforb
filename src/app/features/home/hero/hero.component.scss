@@ -1,0 +1,88 @@
+.hero {
+    position: relative;
+    background-image: url('/assets/9091c3970e9fa10716c85be2550f79a3cd4021e5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; // o el alto que necesites
+    color: white; // Para que el texto se vea sobre el fondo
+  
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); // Ajusta el nivel de oscuridad
+      z-index: 1;
+    }
+  
+    &__navbar {
+      position: relative;
+      z-index: 1000;
+      display: flex;
+      animation: fade-down 0.5s;
+    }
+  
+    &__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80%;
+      text-align: center;
+      padding: 0 1rem;
+      flex-direction: column;
+      animation: fade-down 0.5s;
+    }
+  
+    &__title {
+      font-size: 2rem;
+      max-width: 800px;
+      margin-bottom: 1.5rem; // Espaciado mejorado
+    }
+  
+    &__actions {
+      width: 80%;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+    &__tabs {
+      border-radius: 5px;
+      //overflow: hidden;
+      gap: 10px;
+      display: flex; // Para que los botones estén en línea
+    }
+
+    &__form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    &__input-search {
+      flex: 1;
+    }
+  
+    &__search {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+  }
+
+@keyframes fade-down {
+  0%{
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}

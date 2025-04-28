@@ -1,0 +1,15 @@
+<app-navbar (toggleSidenav)="onToggleSidenav()"></app-navbar>
+<app-sidenav [isOpen]="isSidenavOpen"></app-sidenav>
+<main class="content" [class.sidenav-open]="isSidenavOpen">
+    <section class="dashboard-header">
+        <h1 class="dashboard-title">Hello, Calvin</h1>
+        <p class="dashboard-subtitle">Welcome back!</p>
+      </section>
+
+    <section class="dashboard-cards">
+        @for (item of cardList; track $index) {
+            <app-dashboard-card [title]="item.title" [amount]="item.amount"></app-dashboard-card>
+        }
+    </section>
+
+</main>

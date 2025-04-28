@@ -1,0 +1,57 @@
+.navbar {
+    width: 100%; // fixed width
+    height: auto; // "hug" se traduce como auto (o min-content/max-content según necesidad)
+    position: absolute; // asumiendo que top y left indican posición absoluta
+    top: 58px;
+    display: flex; // para poder usar gap
+    gap: 24px; // espacio entre elementos hijos
+  
+    // Alternativa si necesitas un alto específico pero con contenido "hug":
+    // height: min-content; // o max-content según el comportamiento deseado
+    // O si realmente quieres 45px como altura fija:
+    height: 45px;
+    justify-content: center;
+
+    &__container{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1{
+          font-size: xxx-large;
+        }
+    }
+  }
+
+  .link-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    &__item {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+  
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid white
+      }
+  
+      &:focus {
+        outline: none;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      
+    }
+  }
+  

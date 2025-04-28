@@ -1,0 +1,30 @@
+.content {
+  padding: 1rem;
+  margin-top: 60px; /* debajo del navbar */
+  transition: margin-left 0.3s ease;
+}
+
+.sidenav-open {
+  margin-left: 240px;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard-subtitle {
+  color: #666;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+

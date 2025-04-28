@@ -1,0 +1,6 @@
+<button class="button button--{{type}} field-standard" [class.button--active]="isActive" (click)="handleClick()">
+  <span *ngIf="type === 'search'" class="button__icon material-icons">{{ icon || 'search' }}</span>
+  <span *ngIf="type==='filter'" class="button__icon material-icons">{{icon || 'filter'}}</span>
+  <!-- Texto (oculto si type es 'search' y no hay texto) -->
+  <span *ngIf="!(type === 'search' && !text)" class="button__text">{{ text }}</span>
+</button>

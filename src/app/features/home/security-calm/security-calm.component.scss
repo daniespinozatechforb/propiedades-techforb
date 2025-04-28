@@ -1,0 +1,132 @@
+/* Contenedor padre debe tener position: relative */
+.contenedor-imagen {
+    position: relative;
+    /* Asegúrate de que el contenedor tenga dimensiones adecuadas */
+}
+
+/* Estilo para el h2 */
+.contenedor-imagen h2 {
+    position: absolute;
+    top: 20px;
+    /* Ajusta según necesites */
+    left: 20px;
+    /* Ajusta según necesites */
+    margin: 0;
+    /* Elimina márgenes por defecto */
+    /* Otros estilos de texto (color, tamaño, etc.) */
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    background-color: #1f2c5c;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.icono img {
+    width: 24px;
+    height: 24px;
+}
+
+.texto h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #1f2c5c;
+}
+
+.texto p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+
+.container {
+    width: 100%;
+    background: #FCFCFB;
+background: linear-gradient(45deg, rgba(252, 252, 251, 1) 45%, rgba(166, 178, 211, 0.5) 100%);
+}
+
+.div-container {
+    display: flex;
+    width: 100%;
+}
+
+.image-container img {
+    width: 743px;
+    height: 663px;
+    border-top-right-radius: 200px;
+    object-fit: cover;
+}
+
+.info-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-svg {
+    width: 86px;
+    height: 89px;
+    background-color: #1f2c5c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 0 0 15px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    gap: 5px;
+}
+
+p{
+    color: #1A2E62;
+    font-size: 14px;
+}
+
+.last-info{
+    color: #8A8A8A;
+    font-size: 11px;
+}
+
+@media screen and (min-width:1345px) {
+    .div-container{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
