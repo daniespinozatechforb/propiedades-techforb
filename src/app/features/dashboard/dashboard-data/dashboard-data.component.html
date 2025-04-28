@@ -1,0 +1,18 @@
+<div class="sales-item-container">
+  <div class="sales-container-header">
+    <p>Analiticas</p>
+  </div>
+  
+  <div>
+    <div *ngFor="let item of salesData" class="sales-item">
+    <div class="sales-title">
+      {{ item.label }} <span>{{ item.value }}%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="item.value"></div>
+    </div>
+  </div>
+  </div>
+
+  
+</div>

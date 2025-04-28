@@ -2,7 +2,7 @@
 <app-sidenav [isOpen]="isSidenavOpen"></app-sidenav>
 <main class="content" [class.sidenav-open]="isSidenavOpen">
     <section class="dashboard-header">
-        <h1 class="dashboard-title">Hello, Calvin</h1>
+        <h1 class="dashboard-title">Hello, {{username}}</h1>
         <p class="dashboard-subtitle">Welcome back!</p>
       </section>
 
@@ -12,4 +12,14 @@
         }
     </section>
 
+    <section class="dashboard-analytics">
+        <app-dashboard-chart class="analytics-chart"></app-dashboard-chart>
+        <app-dashboard-data class="analytics-data"></app-dashboard-data>
+      </section>
+
+      <section class="dasboard-botton-cards">
+        <app-dashboard-map></app-dashboard-map>
+        <app-dashboard-transactions></app-dashboard-transactions>
+        <app-dashboard-top-properties></app-dashboard-top-properties>
+      </section>
 </main>

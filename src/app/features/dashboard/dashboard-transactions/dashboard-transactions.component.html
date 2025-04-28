@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+      <h2>Recent Transactions</h2>
+      <a href="#" class="view-orders">View orders →</a>
+    </div>
+  
+    <div class="card-body">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions">
+            <td>
+              <img [src]="transaction.image" alt="Property" class="thumbnail" />
+            </td>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.name }}</td>
+            <td>{{ transaction.price }}</td>
+            <td>{{ transaction.type }}</td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{ 'paid': transaction.paid, 'unpaid': !transaction.paid }"
+              >
+                {{ transaction.paid ? 'Paid' : 'Unpaid' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
