@@ -1,3 +1,5 @@
+@import 'variables';
+
 section{
   width: 100%;
   background-color: #F8F9FB;
@@ -52,7 +54,7 @@ section{
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #2a6496;
+    color: $secondary-color;
     padding: 0 1rem;
 
     &:disabled {
@@ -64,13 +66,6 @@ section{
       color: #1a4b7a;
     }
 
-    &--prev {
-      // Additional styles for prev button if needed
-    }
-
-    &--next {
-      // Additional styles for next button if needed
-    }
   }
 }
 
@@ -123,7 +118,7 @@ section{
 
   &__price {
     font-size: 1.1rem;
-    color: #2a6496;
+    color: $secondary-color;
     font-weight: bold;
   }
 

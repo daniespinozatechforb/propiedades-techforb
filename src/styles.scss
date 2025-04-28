@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'variables';
 
 html,
 body {
@@ -7,8 +8,7 @@ body {
 
 body, * {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: #F8F9FB;
+  font-family: $font-body;
 }
 
 a{

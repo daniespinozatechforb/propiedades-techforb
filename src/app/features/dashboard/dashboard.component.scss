@@ -1,7 +1,7 @@
 .content {
   padding: 1.5rem;
-  margin-top: 20px; 
   transition: margin-left 0.3s ease;
+  background-color: #F8F9FB;
 }
 
 .sidenav-open {
@@ -53,5 +53,9 @@
 @media (max-width: 768px) {
   .dashboard-analytics {
     flex-direction: column;
+  }
+
+  .sidenav-open{
+    margin-left: 0;
   }
 }

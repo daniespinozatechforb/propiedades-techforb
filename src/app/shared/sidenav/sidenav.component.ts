@@ -8,4 +8,16 @@ import { Component, Input } from '@angular/core';
 })
 export class SidenavComponent {
   @Input() isOpen = false;
+
+  sidenavContent:string[]=[
+    'Dashboard',
+    'Perfil',
+    'Propiedades',
+    'Clientes',
+    'Analiticas',
+    'Mapa',
+    'Contacto',
+    'Inicio',
+    'Cerrar Sesion'
+  ]
 }
