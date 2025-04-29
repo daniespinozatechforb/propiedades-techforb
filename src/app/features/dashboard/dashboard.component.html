@@ -3,7 +3,7 @@
 
 <main class="dashboard" [class.dashboard--sidenav-open]="isSidenavOpen">
   <section class="dashboard__header">
-    <span class="dashboard__title">Hola, {{username}}</span>
+    <span class="dashboard__title">Hola, {{username | async }}</span>
     <span class="dashboard__subtitle">¡Bienvenido de nuevo!</span>
   </section>
 
