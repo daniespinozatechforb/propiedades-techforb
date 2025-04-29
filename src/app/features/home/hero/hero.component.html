@@ -17,9 +17,9 @@
           <app-input-search type="text"></app-input-search>
         </div>
         <div class="hero__search">
-          <app-select [options]="['Departamento', 'Casa', 'Ph']" placeholder="Departamento" ></app-select>
-          <app-select [options]="['1 ambiente', '2 ambientes', '3 ambientes']" placeholder="Ambientes" ></app-select>
-          <app-select [options]="['$100', '$200', '$300']" placeholder="Precio" ></app-select>
+          <app-select [fieldStandard]="true" [options]="['Departamento', 'Casa', 'Ph']" placeholder="Departamento" ></app-select>
+          <app-select [fieldStandard]="true" [options]="['1 ambiente', '2 ambientes', '3 ambientes']" placeholder="Ambientes" ></app-select>
+          <app-select [fieldStandard]="true" [options]="['$100', '$200', '$300']" placeholder="Precio" ></app-select>
           <app-button icon="tune" type="filter"></app-button>
           <app-button icon="search" type="search" (onClick)="search()"></app-button>
         </div>

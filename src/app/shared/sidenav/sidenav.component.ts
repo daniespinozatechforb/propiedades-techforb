@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { LoginService } from '../../core/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,6 +10,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SidenavComponent {
   @Input() isOpen = false;
+  private loginService = inject(LoginService);
+  private router = inject(Router);
 
   sidenavContent:string[]=[
     'Dashboard',
@@ -20,4 +24,10 @@ export class SidenavComponent {
     'Inicio',
     'Cerrar Sesion'
   ]
+
+  logout() {
+    this.loginService.logout();
+    this.isOpen = false;
+    this.router.navigate(['/home']);
+  }
 }

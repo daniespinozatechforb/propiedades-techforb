@@ -1,36 +1,49 @@
 .navbar {
-    width: 100%; // fixed width
-    height: auto; // "hug" se traduce como auto (o min-content/max-content según necesidad)
-    position: absolute; // asumiendo que top y left indican posición absoluta
-    top: 58px;
-    display: flex; // para poder usar gap
-    gap: 24px; // espacio entre elementos hijos
-  
-    // Alternativa si necesitas un alto específico pero con contenido "hug":
-    // height: min-content; // o max-content según el comportamiento deseado
-    // O si realmente quieres 45px como altura fija:
-    height: 45px;
-    justify-content: center;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 58px;
+  display: flex; 
+  gap: 24px; 
+  height: 45px;
+  justify-content: center;
 
-    &__container{
-        width: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        h1{
-          font-size: xxx-large;
-        }
-    }
+  &__container {
+      width: 80%;
+      display: flex;
+      align-items: flex-start;
   }
 
-  .link-list {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  
-    &__item {
+  &__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+          font-size: xxx-large;
+          color: white;
+      }
+  }
+
+  &__toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+  }
+}
+
+.link-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
       display: inline-block;
       text-decoration: none;
       color: white;
@@ -39,19 +52,72 @@
       font-weight: 600;
       transition: all 0.3s ease;
       border: 1px solid transparent;
-  
+
       &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid white
-      }
-  
-      &:focus {
-        outline: none;
-        border: 1px solid white;
-        background-color: rgba(255, 255, 255, 0.15);
+          background-color: rgba(255, 255, 255, 0.1);
+          border: 1px solid white;
       }
 
-      
+      &:focus {
+          outline: none;
+          border: 1px solid white;
+          background-color: rgba(255, 255, 255, 0.15);
+      }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+      &__container {
+          flex-direction: column;
+      }
+
+      &__toggle {
+          display: block;
+      }
+
+      &__navigation {
+          display: none;
+          width: 100%;
+          background-color: #F8F9FB;
+          border-radius: 8px;
+          padding: 1rem;
+          margin-top: 1rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+          &.active {
+              display: block;
+          }
+
+          .link-list {
+              flex-direction: column;
+              gap: 0.5rem;
+
+              &__item {
+                  color: #333;
+                  padding: 0.75rem 1rem;
+                  border-bottom: 1px solid #e0e0e0;
+                  border-radius: 0;
+
+                  &:hover {
+                      background-color: #e9ecef;
+                      border-bottom: 1px solid #e0e0e0;
+                  }
+
+                  &:last-child {
+                      border-bottom: none;
+                  }
+              }
+          }
+      }
+  }
+}
+
+  @media screen and (max-width:1124px) {
+    .navbar{
+      &__container{
+        flex-direction: column;
+      }
     }
   }
   

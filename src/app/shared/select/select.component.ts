@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { Component, Input, input, output, signal } from '@angular/core';
 
 export interface SelectOption {
-  value: string | number;  // Puede ser string o número
-  label: string;          // Texto visible para el usuario
+  value: string | number; 
+  label: string;         
 }
 
 @Component({
@@ -14,6 +14,7 @@ export interface SelectOption {
   styleUrl: './select.component.scss'
 })
 export class SelectComponent {
+  fieldStandard=input<boolean>(false);
   @Input() placeholder: string = 'Selecciona una opción';
   @Input() options: string[] = [];
 }

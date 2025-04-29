@@ -1,25 +1,32 @@
 <app-navbar (toggleSidenav)="onToggleSidenav()"></app-navbar>
 <app-sidenav [isOpen]="isSidenavOpen"></app-sidenav>
-<main class="content" [class.sidenav-open]="isSidenavOpen">
-    <section class="dashboard-header">
-        <h1 class="dashboard-title">Hello, {{username}}</h1>
-        <p class="dashboard-subtitle">Welcome back!</p>
-      </section>
 
-    <section class="dashboard-cards">
-        @for (item of cardList; track $index) {
-            <app-dashboard-card [title]="item.title" [amount]="item.amount"></app-dashboard-card>
-        }
-    </section>
+<main class="dashboard" [class.dashboard--sidenav-open]="isSidenavOpen">
+  <section class="dashboard__header">
+    <span class="dashboard__title">Hola, {{username}}</span>
+    <span class="dashboard__subtitle">¡Bienvenido de nuevo!</span>
+  </section>
 
-    <section class="dashboard-analytics">
-        <app-dashboard-chart class="analytics-chart"></app-dashboard-chart>
-        <app-dashboard-data class="analytics-data"></app-dashboard-data>
-      </section>
+  <section class="dashboard__cards">
+    @for (item of cardList; track $index) {
+      <app-dashboard-card
+        [title]="item.title"
+        [amount]="item.amount"
+        [icon]="item.icon"
+      ></app-dashboard-card>
+    }
+  </section>
 
-      <section class="dasboard-botton-cards">
-        <app-dashboard-map></app-dashboard-map>
-        <app-dashboard-transactions></app-dashboard-transactions>
-        <app-dashboard-top-properties></app-dashboard-top-properties>
-      </section>
+  <section class="dashboard__analytics">
+    <app-dashboard-chart class="dashboard__analytics-chart"></app-dashboard-chart>
+    <app-dashboard-data class="dashboard__analytics-data"></app-dashboard-data>
+  </section>
+
+  <section class="dashboard__bottom-cards">
+    <app-dashboard-map></app-dashboard-map>
+    <app-dashboard-transactions></app-dashboard-transactions>
+    <app-dashboard-top-properties></app-dashboard-top-properties>
+  </section>
 </main>
+<app-footer></app-footer>
+

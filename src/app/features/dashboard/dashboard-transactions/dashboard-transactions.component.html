@@ -1,42 +1,43 @@
 <div class="card">
-    <div class="card-header">
-      <h2>Recent Transactions</h2>
-      <a href="#" class="view-orders">View orders →</a>
-    </div>
-  
-    <div class="card-body">
-      <table class="transactions-table">
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Type</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let transaction of transactions">
-            <td>
-              <img [src]="transaction.image" alt="Property" class="thumbnail" />
-            </td>
-            <td>{{ transaction.date }}</td>
-            <td>{{ transaction.name }}</td>
-            <td>{{ transaction.price }}</td>
-            <td>{{ transaction.type }}</td>
-            <td>
-              <span
-                class="badge"
-                [ngClass]="{ 'paid': transaction.paid, 'unpaid': !transaction.paid }"
-              >
-                {{ transaction.paid ? 'Paid' : 'Unpaid' }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="card__header">
+    <span class="dashboard-title">Transacciones Recientes</span>
+    <a href="#" class="subtitle">Ver ordenes →</a>
   </div>
-  
-  
+
+  <div class="card__body">
+    <table class="table">
+      <thead class="table__head">
+        <tr>
+          <th class="table__cell">Propiedad</th>
+          <th class="table__cell">Fecha</th>
+          <th class="table__cell">Nombre</th>
+          <th class="table__cell">Precio</th>
+          <th class="table__cell">Tipo</th>
+          <th class="table__cell">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td class="table__cell">
+            <img [src]="transaction.image" alt="Property" class="thumbnail" />
+          </td>
+          <td class="table__cell data">{{ transaction.date }}</td>
+          <td class="table__cell">{{ transaction.name }}</td>
+          <td class="table__cell data">{{ transaction.price }}</td>
+          <td class="table__cell">{{ transaction.type }}</td>
+          <td class="table__cell">
+            <span
+              class="transaction__badge"
+              [ngClass]="{
+                'transaction__badge--paid': transaction.paid,
+                'transaction__badge--unpaid': !transaction.paid
+              }"
+            >
+              {{ transaction.paid ? 'Pago' : 'Impago' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

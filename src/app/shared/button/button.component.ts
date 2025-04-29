@@ -8,12 +8,12 @@ import { booleanAttribute, Component, EventEmitter, Input, Output, signal } from
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-  @Input() text: string = ''; // Texto del botón (opcional)
-  @Input() type: 'primary' | 'filter' | 'search' | 'tab' = 'primary'; // Tipo de botón
-  @Input() size: 'small' | 'medium' | 'large' = 'medium'; // Tamaño
-  @Input() disabled: boolean = false; // Estado deshabilitado
-  @Input() isActive: boolean = false; // Controla el borde azul
-  @Input() icon?: string; // Ícono (ej: 'fa fa-plus')
+  @Input() text: string = '';
+  @Input() type: 'menu' | 'filter' | 'search' | 'tab' = 'menu';
+  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  @Input() disabled: boolean = false;
+  @Input() isActive: boolean = false;
+  @Input() icon?: string; 
 
   @Output() onClick = new EventEmitter<void>();
 

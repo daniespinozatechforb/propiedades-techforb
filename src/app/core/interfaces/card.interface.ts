@@ -1,4 +1,5 @@
 export interface card{
     title:string,
-    amount:number
+    amount:number,
+    icon:string
 }

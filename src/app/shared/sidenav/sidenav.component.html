@@ -1,7 +1,13 @@
-<div class="sidenav" [class.open]="isOpen">
-  @for (item of sidenavContent; track $index) {
-    <ul>
-      <li><a href="#">{{item}}</a></li>
-    </ul>
-  }
+<div class="sidenav" [class.sidenav--open]="isOpen">
+  <ul class="sidenav__list">
+    @for (item of sidenavContent; track $index) {
+      <li class="sidenav__item">
+        @if (item === 'Cerrar Sesion') {
+          <a class="sidenav__link" (click)="logout()">{{ item }}</a>
+        } @else {
+          <a href="#" class="sidenav__link">{{ item }}</a>
+        }
+      </li>
+    }
+  </ul>
 </div>

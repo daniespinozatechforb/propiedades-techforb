@@ -1,36 +1,35 @@
 <div class="card">
-    <div class="card-header">
-      <h2>Top Properties</h2>
-      <a href="#" class="see-more">See More →</a>
-    </div>
-  
-    <div class="card-body">
-      <table class="properties-table">
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Location</th>
-            <th>Trend</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let property of properties">
-            <td class="property-info">
-              <img [src]="property.image" alt="Property" class="thumbnail" />
-              <span>{{ property.name }}</span>
-            </td>
-            <td>{{ property.location }}</td>
-            <td>
-              <span
-                class="trend"
-                [ngClass]="{ 'up': property.trend > 0, 'down': property.trend < 0 }"
-              >
-                {{ property.trend > 0 ? '↑' : '↓' }} {{ property.trend }}%
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="card__header">
+    <span class="dashboard-title">Top Propiedades</span>
+    <a href="#" class="subtitle">Ver mas →</a>
   </div>
-  
+
+  <div class="card__body">
+    <table class="table">
+      <thead class="table__head">
+        <tr>
+          <th class="table__cell">Propiedad</th>
+          <th class="table__cell">Localizacion</th>
+          <th class="table__cell">Tendencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let property of properties">
+          <td class="table__cell property__info">
+            <img [src]="property.image" alt="Property" class="thumbnail" />
+            <span>{{ property.name }}</span>
+          </td>
+          <td class="table__cell data">{{ property.location }}</td>
+          <td class="table__cell">
+            <span
+              class="property__trend"
+              [ngClass]="{ 'property__trend--up': property.trend > 0, 'property__trend--down': property.trend < 0 }"
+            >
+              {{ property.trend > 0 ? '↑' : '↓' }} {{ property.trend }}%
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

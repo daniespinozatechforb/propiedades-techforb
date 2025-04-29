@@ -1,14 +1,23 @@
 <section class="navbar">
     <div class="navbar__container">
-        <div><h1>L O G O</h1></div>
-        <nav class="navbar__navigation">
+        <div class="navbar__header">
+            <h1>L O G O</h1>
+            <button class="navbar__toggle" (click)="toggleMenu()">
+                <span class="material-icons">{{ isMenuOpen ? 'close' : 'menu' }}</span>
+            </button>
+        </div>
+        <nav class="navbar__navigation" [class.active]="isMenuOpen">
             <ul class="link-list">
                 <li><a href="#" class="link-list__item">Inicio</a></li>
                 <li><a href="#" class="link-list__item">Nosotros</a></li>
                 <li><a href="#" class="link-list__item">Propiedades</a></li>
-                <li><a href="#" class="link-list__item">Login</a></li>
-              </ul>
-              
+                <ng-container *ngIf="user$ | async as user; else loginLink">
+                    <li><a routerLink="/dashboard" class="link-list__item">Dashboard</a></li>
+                </ng-container>
+                <ng-template #loginLink>
+                    <li><a class="link-list__item" (click)="openDialogLogin('0ms','0ms')">Login</a></li>
+                </ng-template>
+            </ul>      
         </nav>
     </div>
 </section>

@@ -90,7 +90,7 @@ background: linear-gradient(45deg, rgba(252, 252, 251, 1) 45%, rgba(166, 178, 21
     gap: 20px;
 }
 
-.card {
+.calm-card {
     display: flex;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -130,3 +130,11 @@ p{
         margin: 0 auto;
     }
 }
+
+
+@media screen and (max-width:1345px) {
+    .image-container{
+        display: none;
+    }
+}
+

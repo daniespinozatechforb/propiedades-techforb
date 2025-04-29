@@ -1,18 +1,24 @@
-<div class="sales-item-container">
-  <div class="sales-container-header">
-    <p>Analiticas</p>
-  </div>
-  
-  <div>
-    <div *ngFor="let item of salesData" class="sales-item">
-    <div class="sales-title">
-      {{ item.label }} <span>{{ item.value }}%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress" [style.width.%]="item.value"></div>
-    </div>
-  </div>
+<div class="analytics-card">
+  <div class="analytics-card__header">
+    <span class="dashboard-title">Analiticas</span>
+    <app-select 
+      [options]="['Anual','Mensual','Semanal','Diario']" 
+      placeholder="Anual">
+    </app-select>
   </div>
 
-  
+  <div class="analytics-card__content">
+    <div *ngFor="let item of salesData" class="analytics-card__item">
+      <div class="analytics-card__item-title data">
+        {{ item.label }} <span>{{ item.value }}%</span>
+      </div>
+      <div class="analytics-card__progress-bar">
+        <div 
+          class="analytics-card__progress" 
+          [style.width.%]="item.value">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

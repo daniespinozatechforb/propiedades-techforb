@@ -7,31 +7,39 @@
   width: 240px;
   height: calc(100% - 60px);
   background-color: $dashboard-color;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   overflow-x: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 1000;
-}
 
-.sidenav.open {
-  transform: translateX(0);
-}
+  &--open {
+    transform: translateX(0);
+  }
 
-.sidenav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.sidenav ul li {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-}
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: .3s ease-in-out;
 
-.sidenav ul li a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #8A8A8A;
-  display: block;
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #8A8A8A;
+    display: block;
+    &:hover{
+      color: $font-color;
+    }
+  }
 }

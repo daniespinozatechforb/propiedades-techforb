@@ -16,7 +16,8 @@ a{
 }
 
 li{
-  list-style-type: none
+  list-style-type: none;
+  cursor:pointer;
 }
 
 section{
@@ -32,6 +33,82 @@ section{
   line-height: 1.2;
 
 }
+
+.dashboard-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: $font-subtitle-color;
+}
+
+.subtitle:hover {
+  color:$primary-color;
+}
+
+.data{
+  font-size: 14px;
+  color: $font-subtitle-color;
+}
+
+/* componentes top/transactions */
+
+.card {
+  background: $font-color;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card__body {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table__head {
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+  z-index: 1;
+}
+
+.table__cell {
+  font-size: .8rem;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
 
 @media screen and (min-width:1345px) {
   .field-standard{

@@ -1,24 +1,42 @@
-.card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
+@import 'variables';
+
+.dashboard-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .card span {
-    font-size: .8rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    flex-direction: column;
+    gap: 5px;
     background-color: white;
   }
-  
-  .card p{
+
+  &__title {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__amount {
     font-size: 1.4rem;
     font-weight: 600;
+    text-align: start;
     background-color: white;
   }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+
+  &__icon {
+    color: $font-green;
+  }
+}

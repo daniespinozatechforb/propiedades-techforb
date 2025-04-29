@@ -1,5 +1,12 @@
 <div class="dropdown">
-  <select class="dropdown__field field-standard" id="dropdownField" [attr.placeholder]="placeholder">
-    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-  </select>
+  @if (fieldStandard()) {
+    <select class="dropdown__field field-standard" id="dropdownField" [attr.placeholder]="placeholder">
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+  }@else {
+    <select class="dropdown__field" id="dropdownField" [attr.placeholder]="placeholder">
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+  }
+  
 </div>
